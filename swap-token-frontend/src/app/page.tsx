@@ -16,8 +16,8 @@ export default function Home() {
       const wallet = new PhantomWalletAdapter();
       await wallet.connect();
       setWallet(wallet);
-
       const connection = new Connection(clusterApiUrl(WalletAdapterNetwork.Devnet));
+
       if (wallet.publicKey) {
         const balance = await connection.getBalance(wallet.publicKey);
         setBalance(balance / LAMPORTS_PER_SOL);
